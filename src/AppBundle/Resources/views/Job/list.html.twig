@@ -1,0 +1,29 @@
+{% extends '::base.html.twig' %}
+{% block body %}
+    <h1>Oferty z kategorii {{nazwa_kategorii}}</h1>
+    <table>
+        <thead>
+        <tr>
+            <th>Nazwa stanowiska</th>
+            <th>Nazwa Firmy</th>
+            <th>Lokalizacja</th>
+            <th>Data dodania oferty</th>
+            <th>Typ umowy</th>
+            <th>Link</th>
+        </tr>
+        </thead>
+        <tbody>
+            {% for xxx in lista_ofert %}
+            <tr>
+                <td>{{xxx.position}}</td>
+                <td>{{xxx.companyName}}</td>
+                <td>{{xxx.location}}</td>
+                <td>{{xxx.publishedAt|date('d-m-y')}}</td>
+                <td>{{xxx.type}}</td>
+                <td> <a href="#">Szczegóły</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
+
